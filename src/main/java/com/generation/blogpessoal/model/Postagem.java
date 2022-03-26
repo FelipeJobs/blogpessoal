@@ -1,7 +1,7 @@
 package com.generation.blogpessoal.model;
 
 import java.time.LocalDate;
-
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "tb_postagem")
+@Table(name = "tb_postagens")
 public class Postagem {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ public class Postagem {
 	@Size(min = 10, max = 1000, message = "O atributo texto deve conter no mínimo 10 e no máximo 500 caracteres")
 	private String texto;
 	@UpdateTimestamp
-	private LocalDate data;
+	private LocalDateTime data;
 	public Long getId() {
 		return id;
 	}
@@ -46,10 +46,10 @@ public class Postagem {
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
-	public LocalDate getData() {
+	public LocalDateTime getData() {
 		return data;
 	}
-	public void setData(LocalDate data) {
+	public void setData(LocalDateTime data) {
 		this.data = data;
 	}
 
