@@ -45,10 +45,12 @@ public class PostagemController {
 	return repository.findById(id)
 			.map(resp -> ResponseEntity.ok(resp))
 			.orElse(ResponseEntity.notFound().build());
-	
+	// o map significa que todos os termos presente em uma lista
+	// será analisado pela função, que neste caso será todos os id
+	// existentes no banco de dados.
 	//esse método acima é conhecido como lamba um método sem função que devo personalizar. 
 	//todo esse comando é equivalente a um if como vemos no exemplo abaixo		
-//	Optional <Postagem> resposta = postagemRepository.findById(id);
+//	Optional <Postagem> resposta = repository.findById(id);
 //	if (resposta.isPresent()) {
 //		return ResponseEntity.ok(resposta);
 //	} else {
