@@ -26,6 +26,14 @@ public class UsuarioLogin {
 		return id;
 	}
 
+	// criei esse construtor para poder usar no meu teste de login.
+	public UsuarioLogin(String usuario, String senha) {
+		super();
+		this.usuario = usuario;
+		this.senha = senha;
+	}
+
+
 	public void setId(Long id) {
 		this.id = id;
 	}

@@ -1,5 +1,6 @@
 package com.generation.blogpessoal.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.generation.blogpessoal.model.Usuario;
@@ -12,5 +13,9 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
 	
 	public Optional<Usuario> findByUsuario(String usuario);
+	
+	
+	// estou criando esse método para utilizar nos testes e confirmar se está funcionando.
+	public List <Usuario> findAllByNomeContainingIgnoreCase(String string); 
 
 }

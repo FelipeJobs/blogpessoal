@@ -43,6 +43,29 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
+	
+// criando um método construtor para ser utilizado no teste. eu não adicionei o postagem nesse
+// construtor porque ele tem a função de listar as postagem e por estar associadas ao usuário, 
+//	é um atributo preenchido automacamente pelo
+//Relacionamento entre as Classes.
+
+	public Usuario(Long id, String nome, String usuario, String senha, String foto) {
+			
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.senha = senha;
+		this.foto = foto;
+	}
+	// criando outro construtor
+	public Usuario() {
+		
+	}
+	
+	/* é através desses dois métodos construtor que o testes vai criar irá instanciar 
+	 * alguns objetos da Classe Usuario nas nossas classes de teste.
+	 */
 
 	public Long getId() {
 		return id;
