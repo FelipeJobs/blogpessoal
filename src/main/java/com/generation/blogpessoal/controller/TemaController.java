@@ -40,9 +40,9 @@ public class TemaController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
-	@GetMapping("/descricao/{descricao}") //aqui é para retornar o nome
-	public ResponseEntity <List<Tema>> getByNome (@PathVariable String nome){
-		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(nome));
+	@GetMapping("/descricao/{descricao}")
+	public ResponseEntity<List<Tema>> getByDescricao(@PathVariable String descricao) {
+		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(descricao));
 	}
 	
 	@PostMapping // esse comando é para adicionar dados no sistema ou no banco de dados.
